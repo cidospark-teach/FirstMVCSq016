@@ -1,0 +1,13 @@
+﻿@model string
+@{
+    var msg = ViewBag.Success;
+}
+
+<form method="post" asp-action="Message" asp-controller="Account">
+    <button>Send Mail</button>
+</form>
+
+@if (!string.IsNullOrEmpty(msg))
+{
+    @msg;
+}

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\FirstMVCSQ016.props" />
+</Project>

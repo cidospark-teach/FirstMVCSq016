@@ -1,0 +1,36 @@
+﻿@model IndexPageViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="main-container" style="margin: 20px auto">
+        <form method="get" asp-controller="Home" asp-action="Index" id="search-form">
+            <div class="control-wrapper">
+                <button class="search-btn">Search</button>
+                <input asp-for="SearchTerm" class="search-input" placeholder="Enter a search term" />
+            </div>
+        </form>
+</div>
+<div class="main-container">
+    @if (!Model.WeatherResults.Any())
+    {
+        <div style="text-align:center; width:100%;">No record found.</div>
+    }
+    else
+    {
+        @foreach (var item in Model.WeatherResults)
+        {
+            <div class="container-items">
+                <div class="image-box">
+                    <img src="@item.Photo" asp-append-version="true" />
+                </div>
+                <div class="desc-box">
+                    <div class="summary">Waether summary: @item.Summary</div>
+                    <div class="temperature">TempC: @item.TemperatureC, TempF @item.TemperatureF</div>
+                </div>
+            </div>
+        }
+    }
+
+</div>
