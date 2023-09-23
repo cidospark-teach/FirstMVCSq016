@@ -29,6 +29,12 @@ body {
 
 
 /*** My styles below ***/
+
+#input-control-forgot-pass{
+    display:flex;
+    justify-content: space-between;
+}
+
 .main-container {
     display: flex;
     flex-wrap: wrap;

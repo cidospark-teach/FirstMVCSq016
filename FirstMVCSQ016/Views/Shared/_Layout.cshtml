@@ -29,6 +29,9 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="UploadImage">Upload-Image</a>
+                        </li>
+                        <li class="nav-item">
                             @if (_signInManager.IsSignedIn(User))
                             {
                                 @if (_userManager.IsInRoleAsync(user, "admin").Result || _userManager.IsInRoleAsync(user, "editor").Result)

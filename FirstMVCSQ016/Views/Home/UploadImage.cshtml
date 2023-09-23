@@ -1,0 +1,28 @@
+﻿@model UploadImageViewModel
+@{
+    var errMsg = ViewBag.Err;
+    var successMsg = ViewBag.Success;
+}
+<div class="login-panel">
+    <h4>Upload image here</h4>
+    <form method="post" asp-action="UploadImage" asp-controller="Home" enctype="multipart/form-data">
+        <div style="color:red; font-size:12px;">
+            @if (!string.IsNullOrEmpty(errMsg))
+            {
+                @errMsg;
+            }
+            @if (!string.IsNullOrEmpty(successMsg))
+            {
+                @successMsg;
+            }
+        </div>
+        <div class="input-control">
+            <input asp-for="Photo" />
+        </div>
+        <div class="input-control">
+            <input asp-for="FolderName" />
+        </div>
+
+        <button>Upload</button>
+    </form>
+</div>

@@ -19,9 +19,11 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
 builder.Services.AddDbContext<MVCContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("default")));
-builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<MVCContext>();
+builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<MVCContext>().AddDefaultTokenProviders();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IUploadService, UploadService>();
 
 
 
